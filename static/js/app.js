@@ -47,6 +47,16 @@ function runEnter() {
   console.log(filteredData);
 
 
+  var tr = d3.select("tbody").selectAll("tr")
+    .data(filteredData).enter().append("tr");
+
+  var td = tr.selectAll("td")
+    .data(function(d){return d3.values(d)})
+    .enter().append("td")
+    .text(function(d) {return d});
+       
+//  filteredTable.exit().remove();
+
 // TRIED "CLEARING" TABLE DATA AND THEN ADDING FILTERED DATA 
 // BUT DOESN'T WORK
 
@@ -67,13 +77,14 @@ function runEnter() {
 // END OF TRYING "CLEARING" TABLE DATA /////////////////
 
 // TRIED SELECTING AND SHOWING ONLY FILTERED DATA
-  d3.select("tbody")
-    .selectAll("tr")
-    .data(filteredData)
+//  d3.select("tbody")
+//    .selectAll("tr")
+//    .data(filteredData)
 //    .enter()
 //    .append("tr");
-    .exit()
-    .remove();
+//    .exit()
+//    .remove();
 
+//  buildTable(filteredData);
   
 };
