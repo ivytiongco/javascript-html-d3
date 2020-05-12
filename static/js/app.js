@@ -51,27 +51,29 @@ function runEnter() {
 // BUT DOESN'T WORK
 
   // Get a reference to the table body
-  var tbody = d3.select("tbody");
+//  var tbody = d3.select("tbody");
 
-  tbody.html("");
+//  tbody.html("");
 
   // Append a table to your web page and then add new rows of data for each UFO sighting //
-  tableData.forEach((filteredData) => {
-    var row = tbody.append("tr");
-    Object.entries(filteredData).forEach(([key, value]) => {
-      var cell = row.append("td");
-      cell.text(value);
-    });
-  });
+//  tableData.forEach((filteredData) => {
+//    var rows = tbody.append("tr");
+//    Object.entries(filteredData).forEach(([key, value]) => {
+//      var cell = rows.append("td");
+//      cell.text(value);
+//    });
+//  });
 
-// END OF TRYING "CLEARING" TABLE DATA
+// END OF TRYING "CLEARING" TABLE DATA /////////////////
 
 // TRIED SELECTING AND SHOWING ONLY FILTERED DATA
-// SHOWS THE FIRST X NUMBER OF ROWS, 1 LESS THAN ARRAY LENGTH
-  d3.select("#ufo-table")
+  d3.select("tbody")
     .selectAll("tr")
     .data(filteredData)
-    .enter()
-    .append();
+//    .enter()
+//    .append("tr");
+    .exit()
+    .remove();
+
   
 };
