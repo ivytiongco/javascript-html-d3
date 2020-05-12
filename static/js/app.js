@@ -46,6 +46,10 @@ function runEnter() {
 
   console.log(filteredData);
 
+
+// TRIED "CLEARING" TABLE DATA AND THEN ADDING FILTERED DATA 
+// BUT DOESN'T WORK
+
   // Get a reference to the table body
   var tbody = d3.select("tbody");
 
@@ -60,10 +64,14 @@ function runEnter() {
     });
   });
 
-//  d3.select("#ufo-table")
-//    .selectAll("tr")
-//    .data(filteredData)
-//    .enter()
-//    .append();
+// END OF TRYING "CLEARING" TABLE DATA
+
+// TRIED SELECTING AND SHOWING ONLY FILTERED DATA
+// SHOWS THE FIRST X NUMBER OF ROWS, 1 LESS THAN ARRAY LENGTH
+  d3.select("#ufo-table")
+    .selectAll("tr")
+    .data(filteredData)
+    .enter()
+    .append();
   
 };
