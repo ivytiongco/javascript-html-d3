@@ -5,15 +5,15 @@ var tableData = data;
 var tbody = d3.select("tbody");
 
 // function to create table
-function createTable(ufoData) {
+function createTable(d) {
   
   // remove any data in tbody
   tbody.html("");
 
   // Append a table to your web page and then add new rows of data for each UFO sighting //
-  tableData.forEach((ufoData) => {
+  tableData.forEach((d) => {
     var row = tbody.append("tr");
-    Object.entries(ufoData).forEach(([key, value]) => {
+    Object.entries(d).forEach(([key, value]) => {
       var cell = row.append("td");
       cell.text(value);
     });
@@ -45,9 +45,6 @@ function runEnter() {
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
 
-  // console.log(inputValue);
-  // console.log(tableData);
-
   var dataset = tableData;
 
   // Array of filtered data
@@ -56,14 +53,7 @@ function runEnter() {
   }
   console.log(filteredData);
 
-  // Get a reference to the table body
-//  var tbody = d3.select("tbody");
-
-  // remove any children from the list to
-//  tbody.html("");
-//  console.log(tbody);
-
   // create table of filtered data
   createTable(filteredData);
   
-};
+}
