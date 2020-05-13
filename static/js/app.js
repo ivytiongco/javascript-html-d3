@@ -5,23 +5,23 @@ var tableData = data;
 var tbody = d3.select("tbody");
 
 // function to create table
-function createTable(d) {
+//function createTable() {
   
   // remove any data in tbody
-  tbody.html("");
+//  tbody.html("");
 
-  // Append a table to your web page and then add new rows of data for each UFO sighting //
-  tableData.forEach((d) => {
-    var row = tbody.append("tr");
-    Object.entries(d).forEach(([key, value]) => {
-      var cell = row.append("td");
-      cell.text(value);
-    });
+// Append a table to your web page and then add new rows of data for each UFO sighting //
+tableData.forEach((d) => {
+  var row = tbody.append("tr");
+  Object.entries(d).forEach(([key, value]) => {
+    var cell = row.append("td");
+    cell.text(value);
   });
-}
+});
+//}
 
 // create table of all data
-createTable(tableData);
+//createTable(tableData);
 
 // Select the button
 var button = d3.select("#filter-btn");
@@ -48,12 +48,21 @@ function runEnter() {
   var dataset = tableData;
 
   // Array of filtered data
-  if(inputValue) {
+  //if(inputValue) {
     var filteredData = dataset.filter(row => row.datetime === inputValue);
-  }
+  //}
   console.log(filteredData);
 
-  // create table of filtered data
-  createTable(filteredData);
+  // remove any data in tbody
+  tbody.html("");
+
+  // create table of filtered data  
+  filteredData.forEach((d) => {
+    var row = tbody.append("tr");
+    Object.entries(d).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+    });
+  });
   
 }
