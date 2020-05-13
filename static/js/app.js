@@ -1,20 +1,27 @@
 // from data.js
 var tableData = data;
 
-// YOUR CODE HERE!
-// id="ufo-table"
-
 // Get a reference to the table body
 var tbody = d3.select("tbody");
 
-// Append a table to your web page and then add new rows of data for each UFO sighting //
-data.forEach((tableData) => {
-  var row = tbody.append("tr");
-  Object.entries(tableData).forEach(([key, value]) => {
-    var cell = row.append("td");
-    cell.text(value);
+// function to create table
+function createTable(ufoData) {
+  
+  // remove any data in tbody
+  tbody.html("");
+
+  // Append a table to your web page and then add new rows of data for each UFO sighting //
+  tableData.forEach((ufoData) => {
+    var row = tbody.append("tr");
+    Object.entries(ufoData).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+    });
   });
-});
+}
+
+// create table of all data
+createTable(tableData);
 
 // Select the button
 var button = d3.select("#filter-btn");
@@ -41,50 +48,22 @@ function runEnter() {
   // console.log(inputValue);
   // console.log(tableData);
 
+  var dataset = tableData;
+
   // Array of filtered data
-  var filteredData = tableData.filter(row => row.datetime === inputValue);
-
+  if(inputValue) {
+    var filteredData = dataset.filter(row => row.datetime === inputValue);
+  }
   console.log(filteredData);
-
-
-  var tr = d3.select("tbody").selectAll("tr")
-    .data(filteredData).enter().append("tr");
-
-  var td = tr.selectAll("td")
-    .data(function(d){return d3.values(d)})
-    .enter().append("td")
-    .text(function(d) {return d});
-       
-//  filteredTable.exit().remove();
-
-// TRIED "CLEARING" TABLE DATA AND THEN ADDING FILTERED DATA 
-// BUT DOESN'T WORK
 
   // Get a reference to the table body
 //  var tbody = d3.select("tbody");
 
+  // remove any children from the list to
 //  tbody.html("");
+//  console.log(tbody);
 
-  // Append a table to your web page and then add new rows of data for each UFO sighting //
-//  tableData.forEach((filteredData) => {
-//    var rows = tbody.append("tr");
-//    Object.entries(filteredData).forEach(([key, value]) => {
-//      var cell = rows.append("td");
-//      cell.text(value);
-//    });
-//  });
-
-// END OF TRYING "CLEARING" TABLE DATA /////////////////
-
-// TRIED SELECTING AND SHOWING ONLY FILTERED DATA
-//  d3.select("tbody")
-//    .selectAll("tr")
-//    .data(filteredData)
-//    .enter()
-//    .append("tr");
-//    .exit()
-//    .remove();
-
-//  buildTable(filteredData);
+  // create table of filtered data
+  createTable(filteredData);
   
 };
