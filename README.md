@@ -30,7 +30,7 @@ Using multiple input tags and/or select dropdowns, write JavaScript code so the 
 ## Screenshots
 
 Webpage with table data loaded and filter fields
-![](screenshots/webpage.jpg)
+![](screenshots/webpage.png)
 
 Webpage with table filtered by date
-![](screenshots/webpage_filtered_by_date.jpg)
+![](screenshots/webpage_filtered_by_date.png)
