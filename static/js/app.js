@@ -46,10 +46,7 @@ function runEnter() {
   
   var dataset = tableData;
   
-  // Array of filtered data
-  //var filteredData = dataset.filter(row => row.datetime === inputValue);
-
-  
+  // Generate array based on filters
   // 5 inputs
   if (inputValue && inputValueCity && inputValueState && inputValueCountry && inputValueShape) {
     var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity && row.state === inputValueState && row.country === inputValueCountry && row.shape === inputValueShape);
