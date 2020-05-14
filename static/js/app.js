@@ -31,25 +31,30 @@ function runEnter() {
   
   // Select the input element and get the raw HTML node
   var inputElement = d3.select("#datetime");
-//  var inputElementCity = d3.select("#city");
-//  var inputElementState = d3.select("#state");
-//  var inputElementCountry = d3.select("#country");
-//  var inputElementShape = d3.select("#shape");
+  var inputElementCity = d3.select("#city");
+  var inputElementState = d3.select("#state");
+  var inputElementCountry = d3.select("#country");
+  var inputElementShape = d3.select("#shape");
 
 
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
-//  var inputValueCity = inputElementCity.property("value");
-//  var inputValueState = inputElementState.property("value");
-//  var inputValueCountry = inputElementCountry.property("value");
-//  var inputValueShape = inputElementShape.property("value");
+  var inputValueCity = inputElementCity.property("value");
+  var inputValueState = inputElementState.property("value");
+  var inputValueCountry = inputElementCountry.property("value");
+  var inputValueShape = inputElementShape.property("value");
 
 
   var dataset = tableData;
 
   // Array of filtered data
-  var filteredData = dataset.filter(row => row.datetime === inputValue);
-//  var filteredData = dataset.filter(row => row.datetime === inputValue && row => row.city === inputValueCity);
+  //var filteredData = dataset.filter(row => row.datetime === inputValue);
+  var filteredData = dataset.filter(row => row.datetime === inputValue &&
+    (row.city === inputValueCity ||
+    row.state === inputValueState ||
+    row.country === inputValueCountry ||
+    row.shape === inputValueShape)
+    );
   console.log(filteredData);
 
   // clear data in tbody
