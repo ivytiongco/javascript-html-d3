@@ -45,7 +45,7 @@ function runEnter() {
   var inputValueShape = inputElementShape.property("value");
   
   var dataset = tableData;
-
+  
   // Array of filtered data
   //var filteredData = dataset.filter(row => row.datetime === inputValue);
   var filteredData = dataset.filter(row => row.datetime === inputValue ||
