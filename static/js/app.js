@@ -49,19 +49,34 @@ function runEnter() {
   // Array of filtered data
   //var filteredData = dataset.filter(row => row.datetime === inputValue);
 
-  // 1 input
-  if (inputValue) {
-    var filteredData = dataset.filter(row => row.datetime === inputValue);
-  } else if (inputValueCity) {
-      var filteredData = dataset.filter(row => row.city === inputValueCity);
-  } else if (inputValueState) {
-      var filteredData = dataset.filter(row => row.city === inputValueState);
-  } else if (inputValueCountry) {
-      var filteredData = dataset.filter(row => row.city === inputValueCountry);
-  } else if (inputValueShape) {
-      var filteredData = dataset.filter(row => row.city === inputValueShape);
-  } 
   
+  // 5 inputs
+  if (inputValue && inputValueCity && inputValueState && inputValueCountry && inputValueShape) {
+    var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity && row.state === inputValueState && row.country === inputValueCountry && row.shape === inputValueShape);
+  }
+
+    // 4 inputs
+    else if (inputValue && inputValueCity && inputValueState && inputValueCountry) {
+      var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity && row.state === inputValueState && row.country === inputValueCountry);
+  } else if (inputValue && inputValueCity && inputValueState && inputValueShape) {
+      var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity && row.state === inputValueState && row.shape === inputValueShape);
+  }
+
+    // 3 inputs
+    else if (inputValue && inputValueCity && inputValueState) {
+      var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity && row.state === inputValueState);
+  } else if (inputValue && inputValueCity && inputValueCountry) {
+      var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity && row.country === inputValueCountry);
+  } else if (inputValue && inputValueCity && inputValueShape) {
+      var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity && row.shape === inputValueShape);
+  } else if (inputValue && inputValueState && inputValueCountry) {
+      var filteredData = dataset.filter(row => row.datetime === inputValue && row.state === inputValueState && row.country === inputValueCountry);
+  } else if (inputValue && inputValueState && inputValueShape) {
+      var filteredData = dataset.filter(row => row.datetime === inputValue && row.state === inputValueState && row.shape === inputValueShape);
+  } else if (inputValue && inputValueCountry && inputValueShape) {
+      var filteredData = dataset.filter(row => row.datetime === inputValue && row.country === inputValueCountry && row.shape === inputValueShape);
+  }
+ 
     // 2 inputs
     else if (inputValue && inputValueCity) {
       var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity);
@@ -82,34 +97,19 @@ function runEnter() {
   } else if (inputValueState && inputValueShape) {
       var filteredData = dataset.filter(row => row.state === inputValueState && row.shape === inputValueShape);
   } 
-  
-    // 3 inputs
-    else if (inputValue && inputValueCity && inputValueState) {
-      var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity && row.state === inputValueState);
-  } else if (inputValue && inputValueCity && inputValueCountry) {
-      var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity && row.country === inputValueCountry);
-  } else if (inputValue && inputValueCity && inputValueShape) {
-      var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity && row.shape === inputValueShape);
-  } else if (inputValue && inputValueState && inputValueCountry) {
-      var filteredData = dataset.filter(row => row.datetime === inputValue && row.state === inputValueState && row.country === inputValueCountry);
-  } else if (inputValue && inputValueState && inputValueShape) {
-      var filteredData = dataset.filter(row => row.datetime === inputValue && row.state === inputValueState && row.shape === inputValueShape);
-  } else if (inputValue && inputValueCountry && inputValueShape) {
-      var filteredData = dataset.filter(row => row.datetime === inputValue && row.country === inputValueCountry && row.shape === inputValueShape);
-  }
 
-    // 4 inputs
-    else if (inputValue && inputValueCity && inputValueState && inputValueCountry) {
-      var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity && row.state === inputValueState && row.country === inputValueCountry);
-  } else if (inputValue && inputValueCity && inputValueState && inputValueShape) {
-      var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity && row.state === inputValueState && row.shape === inputValueShape);
-  }
-
-    // 5 inputs
-    else if (inputValue && inputValueCity && inputValueState && inputValueCountry && inputValueShape) {
-      var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity && row.state === inputValueState && row.country === inputValueCountry && row.shape === inputValueShape)
-    );
-  }
+    // 1 input
+    else if (inputValue) {
+    var filteredData = dataset.filter(row => row.datetime === inputValue);
+  } else if (inputValueCity) {
+      var filteredData = dataset.filter(row => row.city === inputValueCity);
+  } else if (inputValueState) {
+      var filteredData = dataset.filter(row => row.city === inputValueState);
+  } else if (inputValueCountry) {
+      var filteredData = dataset.filter(row => row.city === inputValueCountry);
+  } else if (inputValueShape) {
+      var filteredData = dataset.filter(row => row.city === inputValueShape);
+  } 
   
   console.log(filteredData);
 
