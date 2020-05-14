@@ -104,11 +104,11 @@ function runEnter() {
   } else if (inputValueCity) {
       var filteredData = dataset.filter(row => row.city === inputValueCity);
   } else if (inputValueState) {
-      var filteredData = dataset.filter(row => row.city === inputValueState);
+      var filteredData = dataset.filter(row => row.state === inputValueState);
   } else if (inputValueCountry) {
-      var filteredData = dataset.filter(row => row.city === inputValueCountry);
+      var filteredData = dataset.filter(row => row.country === inputValueCountry);
   } else if (inputValueShape) {
-      var filteredData = dataset.filter(row => row.city === inputValueShape);
+      var filteredData = dataset.filter(row => row.shape === inputValueShape);
   } 
   
   console.log(filteredData);
