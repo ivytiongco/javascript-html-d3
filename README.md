@@ -26,3 +26,11 @@ Using multiple input tags and/or select dropdowns, write JavaScript code so the 
 3. state
 4. country
 5. shape
+
+## Screenshots
+
+Webpage with table data loaded and filter fields
+![](screenshots/webpage.jpg)
+
+Webpage with table filtered by date
+![](screenshots/webpage_filtered_by_date.jpg)
