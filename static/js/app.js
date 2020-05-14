@@ -43,10 +43,7 @@ function runEnter() {
   var inputValueState = inputElementState.property("value");
   var inputValueCountry = inputElementCountry.property("value");
   var inputValueShape = inputElementShape.property("value");
-
-  console.log(inputValue);
-  console.log(inputElement);
-
+  
   var dataset = tableData;
 
   // Array of filtered data
