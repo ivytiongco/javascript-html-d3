@@ -36,3 +36,19 @@ Webpage with table data loaded and filter fields
 Webpage with table filtered by date
 
 ![](screenshots/webpage_filtered_by_date.png)
+
+Webpage with table filtered by 2 inputs
+
+![](screenshots/webpage-2inputs.png)
+
+Webpage with table filtered by 3 inputs
+
+![](screenshots/webpage_3inputs.png)
+
+Webpage with table filtered by 4 inputs
+
+![](screenshots/webpage-4inputs.png)
+
+Webpage with table filtered by 5 inputs
+
+![](screenshots/webpage-5inputs.png)
