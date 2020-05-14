@@ -48,6 +48,43 @@ function runEnter() {
   
   // Array of filtered data
   //var filteredData = dataset.filter(row => row.datetime === inputValue);
+
+  if (inputValue) {
+    var filteredData = dataset.filter(row => row.datetime === inputValue);
+  } else if (inputValueCity) {
+    var filteredData = dataset.filter(row => row.city === inputValueCity);
+  } else if (inputValueState) {
+    var filteredData = dataset.filter(row => row.city === inputValueState);
+  } else if (inputValueCountry) {
+    var filteredData = dataset.filter(row => row.city === inputValueCountry);
+  } else if (inputValueShape) {
+    var filteredData = dataset.filter(row => row.city === inputValueShape);
+
+  } else if (inputValue && inputValueCity) {
+    var filteredData = dataset.filter(row => row.datetime === inputValue && row.city === inputValueCity);
+  } else if (inputValue && inputValueState) {
+    var filteredData = dataset.filter(row => row.datetime === inputValue && row.state === inputValueState);
+  } else if (inputValue && inputValueCountry) {
+    var filteredData = dataset.filter(row => row.datetime === inputValue && row.country === inputValueCountry);
+  } else if (inputValue && inputValueShape) {
+    var filteredData = dataset.filter(row => row.datetime === inputValue && row.shape === inputValueShape);
+
+  } else if (inputValueCity && inputValueState) {
+    var filteredData = dataset.filter(row => row.city === inputValueCity && row.state === inputValueState);
+  } else if (inputValueCity && inputValueCountry) {
+    var filteredData = dataset.filter(row => row.city === inputValueCity && row.country === inputValueCountry);
+  } else if (inputValueCity && inputValueShape) {
+    var filteredData = dataset.filter(row => row.city === inputValueCity && row.shape === inputValueShape);
+
+  } else if (inputValueState && inputValueCountry) {
+    var filteredData = dataset.filter(row => row.state === inputValueState && row.country === inputValueCountry);
+  } else if (inputValueState && inputValueShape) {
+    var filteredData = dataset.filter(row => row.city === row.state === inputValueState && row.shape === inputValueShape);
+  } 
+
+
+
+
   var filteredData = dataset.filter(row => row.datetime === inputValue ||
     row.city === inputValueCity ||
     row.state === inputValueState ||
