@@ -44,16 +44,18 @@ function runEnter() {
   var inputValueCountry = inputElementCountry.property("value");
   var inputValueShape = inputElementShape.property("value");
 
+  console.log(inputValue);
+  console.log(inputElement);
 
   var dataset = tableData;
 
   // Array of filtered data
   //var filteredData = dataset.filter(row => row.datetime === inputValue);
   var filteredData = dataset.filter(row => row.datetime === inputValue ||
-  //  row.city === inputValueCity ||
-  //  row.state === inputValueState ||
-  //  row.country === inputValueCountry ||
-  //  row.shape === inputValueShape ||
+    row.city === inputValueCity ||
+    row.state === inputValueState ||
+    row.country === inputValueCountry ||
+    row.shape === inputValueShape ||
     (row.datetime === inputValue && row.city === inputValueCity) ||
     (row.datetime === inputValue && row.state === inputValueState) ||
     (row.datetime === inputValue && row.country === inputValueCountry) ||
