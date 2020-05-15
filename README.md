@@ -47,18 +47,18 @@ Webpage with table filtered by date
 
 ![](screenshots/webpage_filtered_by_date.png)
 
-Webpage with table filtered by 2 inputs
+Webpage with table filtered by 2 inputs (date, state)
 
 ![](screenshots/webpage-2inputs.png)
 
-Webpage with table filtered by 3 inputs
+Webpage with table filtered by 3 inputs (date, state, shape)
 
 ![](screenshots/webpage_3inputs.png)
 
-Webpage with table filtered by 4 inputs
+Webpage with table filtered by 4 inputs (date, city, state, shape)
 
 ![](screenshots/webpage-4inputs.png)
 
-Webpage with table filtered by 5 inputs
+Webpage with table filtered by 5 inputs (date, city, state, country, shape)
 
 ![](screenshots/webpage-5inputs.png)
