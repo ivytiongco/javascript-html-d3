@@ -39,10 +39,10 @@ function runEnter() {
 
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
-  var inputValueCity = inputElementCity.property("value");
-  var inputValueState = inputElementState.property("value");
-  var inputValueCountry = inputElementCountry.property("value");
-  var inputValueShape = inputElementShape.property("value");
+  var inputValueCity = inputElementCity.property("value").toLowerCase();
+  var inputValueState = inputElementState.property("value").toLowerCase();
+  var inputValueCountry = inputElementCountry.property("value").toLowerCase();
+  var inputValueShape = inputElementShape.property("value").toLowerCase();
   
   var dataset = tableData;
   
